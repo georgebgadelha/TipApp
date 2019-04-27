@@ -6,4 +6,6 @@
     <color name="borderColor">#FF0000</color>
     <color name="borderTopApp">#FF5722</color>
     <color name="black">#000000</color>
+    <color name="topOrange">#EE5A24</color>
+    <color name="topBlue">#0652DD</color>
 </resources>

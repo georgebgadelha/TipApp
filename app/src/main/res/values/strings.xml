@@ -7,9 +7,10 @@
     <string name="text_tip">TIP</string>
     <string name="text_new_percentage">NEW %</string>
     <string name="edit_text_amount_hint">20.0</string>
-    <string name="edit_text_percentage_hint">0.2</string>
+    <string name="edit_text_percentage_hint">40</string>
     <string name="edit_text_round_hint">0.25 = Quarter</string>
     <string name="text_final_tip">Final Tip</string>
     <string name="text_new">New %</string>
     <string name="text_button">CALCULATE</string>
+    <string name="text_creator">Created by George Gadelha</string>
 </resources>
