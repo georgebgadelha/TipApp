@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tip Calculator</string>
+    <string name="title_tip_calculator">TIP CALCULATOR</string>
+    <string name="text_amount">AMOUNT</string>
+    <string name="text_percentage">%</string>
+    <string name="text_round">ROUND</string>
+    <string name="text_tip">TIP</string>
+    <string name="text_new_percentage">NEW %</string>
+    <string name="edit_text_amount_hint">20.0</string>
+    <string name="edit_text_percentage_hint">0.2</string>
+    <string name="edit_text_round_hint">0.25 = Quarter</string>
+    <string name="text_final_tip">Final Tip</string>
+    <string name="text_new">New %</string>
+    <string name="text_button">CALCULATE</string>
+</resources>
