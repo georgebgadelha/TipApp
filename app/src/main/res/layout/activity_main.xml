@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tipTitle"
+        android:layout_width="257dp"
+        android:layout_height="34dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/title_tip_calculator"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        android:typeface="normal"
+        app:fontFamily="@font/audiowide"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/amountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/text_amount"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipTitle" />
+
+    <TextView
+        android:id="@+id/percentageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_percentage"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/amountText"
+        app:layout_constraintTop_toBottomOf="@+id/amountText" />
+
+
+    <TextView
+        android:id="@+id/roundText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_round"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/percentageText"
+        app:layout_constraintTop_toBottomOf="@+id/percentageText" />
+
+    <TextView
+        android:id="@+id/finalTipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/text_tip"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/roundText"
+        app:layout_constraintTop_toBottomOf="@+id/calculatorButton" />
+
+    <TextView
+        android:id="@+id/newPercentageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/text_new_percentage"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/finalTipText"
+        app:layout_constraintTop_toBottomOf="@+id/finalTipText" />
+
+    <EditText
+        android:id="@+id/amountEdit"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/edit_text_amount_hint"
+        android:inputType="numberDecimal"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toEndOf="@+id/amountText"
+        app:layout_constraintTop_toTopOf="@+id/amountText"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/percentageEdit"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/edit_text_percentage_hint"
+        android:inputType="numberDecimal"
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="@+id/amountEdit"
+        app:layout_constraintTop_toTopOf="@+id/percentageText"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/roundEdit"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_background"
+        android:ems="10"
+        android:hint="@string/edit_text_round_hint"
+        android:inputType="numberDecimal"
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="@+id/percentageEdit"
+        app:layout_constraintTop_toTopOf="@+id/roundText"
+        tools:ignore="Autofill" />
+
+
+    <TextView
+        android:id="@+id/finalTipAns"
+        android:layout_width="125dp"
+        android:layout_height="24dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/text_final_tip"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/roundEdit"
+        app:layout_constraintTop_toTopOf="@+id/finalTipText" />
+
+    <TextView
+        android:id="@+id/newPercentageAns"
+        android:layout_width="125dp"
+        android:layout_height="24dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/text_new"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/finalTipAns"
+        app:layout_constraintTop_toTopOf="@+id/newPercentageText" />
+
+    <Button
+        android:id="@+id/calculatorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button"
+        android:text="@string/text_button"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/roundEdit"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/roundText"
+        app:layout_constraintTop_toBottomOf="@+id/roundEdit" />
+
+</android.support.constraint.ConstraintLayout>
