@@ -13,4 +13,5 @@
     <string name="text_new">New %</string>
     <string name="text_button">CALCULATE</string>
     <string name="text_creator">Created by George Gadelha</string>
+    <string name="money_image">Money image</string>
 </resources>

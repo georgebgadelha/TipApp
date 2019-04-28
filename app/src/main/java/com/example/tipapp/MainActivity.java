@@ -42,9 +42,16 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast buttonClicked = Toast.makeText(MainActivity.this, "Button Clicked!", Toast.LENGTH_SHORT);
-                buttonClicked.show();
-                buttonClicked();
+
+                if ( !isEmpty() ) {
+                    Toast buttonClicked = Toast.makeText(MainActivity.this, "Tip Calculated!", Toast.LENGTH_SHORT);
+                    buttonClicked.show();
+                    buttonClicked();
+                } else {
+                    TipDialog tipDialog = new TipDialog();
+                    tipDialog.show(getSupportFragmentManager(), "Tip Dialog");
+                }
+
 
             }
         });
@@ -87,5 +94,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             calculateButton.setBackgroundResource(R.drawable.button);
             getWindow().setStatusBarColor(getResources().getColor(R.color.topBlue));
         }
+    }
+
+    public boolean isEmpty() {
+        return String.valueOf(amountEditText.getText()).isEmpty() || String.valueOf(percentageEditText.getText()).isEmpty() || String.valueOf(roundEditText.getText()).isEmpty();
     }
 }
