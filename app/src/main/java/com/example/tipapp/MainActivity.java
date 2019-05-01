@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     TextView finalTipText, newPercentageText;
     Button calculateButton;
     Switch colorSwitch;
+    ImageView coinImage;
     ConstraintLayout layout;
 
     //Tip components
@@ -38,24 +40,33 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         newPercentageText = findViewById(R.id.newPercentageAns);
         colorSwitch = findViewById(R.id.colorSwitch);
         layout = findViewById(R.id.mainActivityLayout);
+        coinImage = findViewById(R.id.imageView);
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if ( !isEmpty() ) {
-                    Toast buttonClicked = Toast.makeText(MainActivity.this, "Tip Calculated!", Toast.LENGTH_SHORT);
-                    buttonClicked.show();
+                if (!isEmpty() && isPercentage(percentageEditText) && isCoin(roundEditText)) {
+                    Toast buttonToaster = Toast.makeText(MainActivity.this, "Tip Calculated!", Toast.LENGTH_SHORT);
+                    buttonToaster.show();
                     buttonClicked();
                 } else {
                     TipDialog tipDialog = new TipDialog();
                     tipDialog.show(getSupportFragmentManager(), "Tip Dialog");
+
+                    if (!isCoin(roundEditText)) {
+                        Toast invalidCoin = Toast.makeText(MainActivity.this, "Invalid coin input", Toast.LENGTH_SHORT);
+                        invalidCoin.show();
+                    }
+                    if (!isPercentage(percentageEditText)) {
+                        Toast invalidPercentage = Toast.makeText(MainActivity.this, "Invalid percentage input", Toast.LENGTH_SHORT);
+                        invalidPercentage.show();
+                    }
                 }
 
 
             }
         });
-
         colorSwitch.setOnCheckedChangeListener(this);
     }
 
@@ -96,7 +107,17 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
     }
 
-    public boolean isEmpty() {
+    private boolean isEmpty() {
         return String.valueOf(amountEditText.getText()).isEmpty() || String.valueOf(percentageEditText.getText()).isEmpty() || String.valueOf(roundEditText.getText()).isEmpty();
     }
+
+    private boolean isCoin(EditText editText) {
+        return (editText.getText().toString().equals("0.01") || editText.getText().toString().equals("0.1") || editText.getText().toString().equals("0.25") || editText.getText().toString().equals("1"));
+    }
+
+    private boolean isPercentage(EditText editText) {
+        double value = Double.parseDouble(editText.getText().toString());
+        return (value > 0 && value < 100);
+    }
+
 }
